@@ -1,0 +1,35 @@
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+  <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="selectedEmployee._id">
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" name="name" #name="ngModel" [(ngModel)]="selectedEmployee.name" placeholder="Enter employee name" required>
+      <label>Name :
+        <label class="red-text">*</label>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" name="position" #name="ngModel" [(ngModel)]="selectedEmployee.position" placeholder="Eg: Sr. Developer">
+      <label>Position :</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" name="office" #name="ngModel" [(ngModel)]="selectedEmployee.office" placeholder="Enter Office location">
+      <label>Office :</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" name="salary" #name="ngModel" [(ngModel)]="selectedEmployee.salary" placeholder="Salary per anum">
+      <label>Salary :</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <button class="btn btn-custom right" type="button" (click)="resetForm(employeeForm)">RESET</button>
+      <button class="btn btn-custom right" type="submit" [disabled]="!employeeForm.valid">SUBMIT</button>
+    </div>
+  </div>
+</form>
